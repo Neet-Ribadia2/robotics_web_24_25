@@ -1,0 +1,253 @@
+<html>
+ <head>
+  <title>
+   Battery Information
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            position: relative;
+        }
+        .text-section {
+            max-width: 50%;
+            position: absolute;
+            transition: transform 0.7s ease-in-out;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .text-section h2 {
+            color: #ff4d00;
+            font-size: 70;
+            margin-bottom: 10px;
+        }
+        .text-section p {
+            font-size: 30px;
+            line-height: 1.5;
+        }
+        .image-section {
+            max-width: 40%;
+            position: absolute;
+            transition: transform 1s ease-in-out;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+        }
+        .navigation {
+            display: flex;
+            align-items: center;
+            margin-top: 38%;
+            margin-right: 72%;
+            transform: translateX(-50%);
+        }
+        .navigation .dots, .navigation .arrows {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            
+        }
+        .navigation .arrows {
+            margin-right: 300%;
+        }
+        .navigation .dots span {
+            width: 10px;
+            height: 10px;
+            background-color: #666666;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .navigation .dots span.active {
+            background-color: #ff6600;
+        }
+        .navigation .arrows {
+            display: flex;
+            align-items: center;
+            margin-left: 40%;
+        }
+        .navigation .arrows i {
+            color: #ffffff;
+            font-size: 18px;
+            margin-left: 50%;
+            cursor: pointer;
+        }
+        .page {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .page.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page.enter-left .text-section {transform: translateX(100%) translateY(-50%);}
+        .page.enter-left .image-section {transform: translateX(100%) translateY(-50%);}
+
+        .page.enter-left-active .text-section {transform: translateX(0) translateY(-50%);}
+        .page.enter-left-active .image-section {transform: translateX(0) translateY(-50%);}
+
+        .page.exit-left .text-section {transform: translateX(0) translateY(-50%);}
+        .page.exit-left .image-sectio {transform: translateX(0) translateY(-50%);}
+        
+        .page.exit-left-active .text-section { transform: translateX(-300%) translateY(-50%);}
+        .page.exit-left-active .image-section {transform: translateX(-300%) translateY(-50%);}
+
+
+        .page.enter-right .text-section { transform: translateX(-100%) translateY(-50%);}
+        .page.enter-right .image-section {transform: translateX(-100%) translateY(-50%); }
+
+        .page.enter-right-active .text-section {transform: translateX(0) translateY(-50%);}
+        .page.enter-right-active .image-section {transform: translateX(0) translateY(-50%);}
+
+        .page.exit-right .text-section { transform: translateX(0) translateY(-50%);}
+        .page.exit-right .image-section { transform: translateX(0) translateY(-50%);}
+
+        .page.exit-right-active .text-section {transform: translateX(300%) translateY(-50%);}
+        .page.exit-right-active .image-section {transform: translateX(300%) translateY(-50%); }
+  </style>
+  <script>
+   let currentPage = 1;
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.classList.remove('active', 'enter-left', 'enter-left-active', 'exit-left', 'exit-left-active', 'enter-right', 'enter-right-active', 'exit-right', 'exit-right-active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+        function nextPage() {
+            var current = document.getElementById('page' + currentPage);
+            current.classList.add('exit-left');
+            setTimeout(function() {
+                current.classList.add('exit-left-active');
+            }, 10);
+            currentPage = (currentPage % 3) + 1;
+            var next = document.getElementById('page' + currentPage);
+            next.classList.add('enter-left');
+            setTimeout(function() {
+                next.classList.add('enter-left-active');
+            }, 10);
+            setTimeout(function() {
+                showPage('page' + currentPage);
+                updateDots();
+            }, 1000);
+        }
+        function prevPage() {
+            var current = document.getElementById('page' + currentPage);
+            current.classList.add('exit-right');
+            setTimeout(function() {
+                current.classList.add('exit-right-active');
+            }, 10);
+            currentPage = (currentPage - 2 + 3) % 3 + 1;
+            var prev = document.getElementById('page' + currentPage);
+            prev.classList.add('enter-right');
+            setTimeout(function() {
+                prev.classList.add('enter-right-active');
+            }, 10);
+            setTimeout(function() {
+                showPage('page' + currentPage);
+                updateDots();
+            }, 1000);
+        }
+        function updateDots() {
+            var dots = document.querySelectorAll('.navigation .dots span');
+            dots.forEach(function(dot, index) {
+                dot.classList.remove('active');
+                if (index === currentPage - 1) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('page1');
+            updateDots();
+        });
+  </script>
+ </head>
+ <body>
+  <div class="page active" id="page1">
+   <div class="container">
+    <div class="text-section">
+     <h2>
+      DID YOU KNOW?
+     </h2>
+     <p>
+      She's powered by a high-efficiency battery designed for extreme conditions. This advanced battery ensures Luna can operate continuously on the moon’s surface, collecting samples and analyzing data, even during the long lunar nights.
+     </p>
+    </div>
+    <div class="image-section">
+     <img alt="A high-efficiency battery glowing green, indicating full charge." height="600" src="https://storage.googleapis.com/a1aa/image/KQF11Fbqe2xqKK2UKqYSe3Wh5GjDfgDtyBKNGI5qGoe4HuhOB.jpg" width="400"/>
+    </div>
+   </div>
+  </div>
+  <div class="page" id="page2">
+   <div class="container">
+    <div class="text-section">
+     <h2>
+      BATTERY TECHNOLOGY
+     </h2>
+     <p>
+      The battery used in Luna is based on cutting-edge technology that allows it to withstand extreme temperatures and conditions. It is designed to be lightweight yet powerful, providing a reliable energy source for extended missions.
+     </p>
+    </div>
+    <div class="image-section">
+     <img alt="A diagram showing the advanced technology used in the battery." height="600" src="https://storage.googleapis.com/a1aa/image/EdZcciSqyYKOFN2ObEdviqrLfhLpzJ2oO8APJa4my8V1KS0JA.jpg" width="400"/>
+    </div>
+   </div>
+  </div>
+  <div class="page" id="page3">
+   <div class="container">
+    <div class="text-section">
+     <h2>
+      MISSION SUCCESS
+     </h2>
+     <p>
+      Thanks to the advanced battery, Luna has successfully completed numerous missions, providing valuable data and insights about the lunar surface. The battery's performance has been critical in ensuring the success of these missions.
+     </p>
+    </div>
+    <div class="image-section">
+     <img alt="Luna rover on the lunar surface, powered by the advanced battery." height="600" src="https://storage.googleapis.com/a1aa/image/pmw5UrlxqeSiWaoLgeIGNdhyNhhgzIZdivUHtsWmrnsrVkoTA.jpg" width="400"/>
+    </div>
+   </div>
+  </div>
+  <div class="navigation">
+   <div class="dots">
+    <span class="active" width="200" height="200">
+    </span>
+    <span>
+    </span>
+    <span>
+    </span>
+   </div>
+   <div class="arrows">
+    <i class="fas fa-chevron-left" onclick="prevPage()">
+    </i>
+    <i class="fas fa-chevron-right" onclick="nextPage()">
+    </i>
+   </div>
+  </div>
+ </body>
+</html>

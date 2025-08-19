@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(#000000, #1c191f, #000001);
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+.notable-regular {
+  font-family: "Notable", sans-serif;
+  font-weight: 1000;
+  font-size: 70px;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+.notable-regular2 {
+  font-family: "Notable", sans-serif;
+  font-weight: 1000;
+  font-size: 45px;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+.notable-regular3 {
+  font-family: "Notable", sans-serif;
+  font-weight: 1000;
+  font-size: 40px;
+  font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", system-ui;
+    font-weight: light;
+}
+
+:root {
+    --bg: rgb(13, 9, 17);
+
+    --clr: #fff;
+    --line: #fff;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+
+.nav {
+    background-image: url('Images/space.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: black;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    
+  }
+  
+  .head {
+    color: white;
+  }
+  
+  .pages {
+    border: 2px solid white;
+    border-left: none;
+    border-right: none;
+    border-radius: 20px;
+    width: 50%;
+    height: 12.7vh;
+    display: flex; /* Use flexbox to manage the layout of links */
+    justify-content: space-evenly; /* Space out links evenly */
+    align-items: center; /* Center   items vertically */
+    padding-left: 45px; /* Add padding inside the container */
+    padding-right: 0px; /* Add padding inside the container */
+    float: right;
+    margin-right: 62px;
+    margin-top: 50px;
+  }
+  
+  
+  
+  .pages a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px 30px 7px 0px;
+    float: right;
+    transition: transform .1s;
+    background-color: transparent;
+  }
+  
+  
+  .pages a:hover {
+    background-color: rgb(192, 189, 189);
+    border: 5px  rgb(192, 189, 189) solid;
+    border-radius: 7px;
+    margin-bottom: 5px;
+    padding-bottom: 1px;
+    font-weight: 600;
+    font-variant-caps:all-small-caps;
+    transform: scale(1.9)
+  }
+  
+
+
+  .quote3{
+    color: black;
+    justify-content: left;
+    align-items: center;
+    padding-top: 25.5%;
+    padding-left: 4%;
+    display: inline-block;
+    text-shadow: 1px 0 #fff, -1px 0 #fff, 0 1px #fff, 0 -1px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+    color: none;
+    animation: 2s slide-right;
+             
+  }
+
+
+  
+  @keyframes slide-right {
+    from {
+      margin-left: -1500px;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
+  
+  @keyframes slide-left {
+    from {
+      margin-left: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+    }
+  }
+  
+
+.image {
+    background-image: url('Images/moon.webp');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: white;
+    justify-content: space-between;
+    width: 100%;
+    height: min(60vw, 400px);
+    display: block;
+    box-shadow: 0px -20px 50px black inset;
+}
+
+.image h1 {
+    font-size: min(5vw, 36px);
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.cards ul {
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5%;
+    padding: 2.5%;
+}
+
+.cards ul li {
+    /* flex-wrap: wrap; */
+    background-color: var(--bg);
+    position: relative;
+    list-style: none;
+    width: 30%;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    flex-direction: column;
+    color: #fff;
+    box-shadow: 0px 0px 10px #000000,
+        0px 0px 10px #000000;
+}
+
+.cards h3 {
+    font-size: min(2vw, 20px);
+}
+
+.disc {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: min(2vw, 16px);
+}
+
+.cards ul li:hover {
+    width: 35%;
+    height: 40vh;
+}
+
+.phoneIcon {
+    height: min(13vw, 60px);
+    width: min(13vw, 60px);
+    padding: 10px;
+}
+
+.emailIcon {
+    height: min(13vw, 60px);
+    width: min(13vw, 80px);
+    padding: 10px;
+}
+
+
+.socials ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  /* padding: 10px; */
+  filter: brightness(0), invert(1);
+}
+
+.socials ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+
+}
+
+.socials ul li::before {
+  content: "";
+  position: absolute;
+  inset: 28px;
+  box-shadow: 0 0 0 10px var(--clr), 0 0 0 20px var(--bg), 0 0 0 22px var(--clr);
+  transition: 0.5s;
+}
+
+.socials ul li:hover::before {
+  inset: 15px;
+}
+
+.socials ul li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+
+.socials ul li:hover::after {
+  inset: 0px;
+  transform: rotate(90deg);
+}
+
+.socials ul li a {
+  position: relative;
+  text-decoration: none;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.socials ul li a img {
+  font-size: 2em;
+  transition: 0.5s;
+  color: var(--clr);
+  opacity: 1;
+}
+
+.socials ul li:hover a img {
+  color: var(--clr);
+  transform: translateY(-40%);
+}
+
+.socials ul li a span {
+  position: absolute;
+  font-family: sans-serif;
+  color: var(--clr);
+  opacity: 0;
+  transition: 0.5s;
+  transform: scale(0) translateY(200%);
+}
+
+.socials ul li:hover a span {
+  opacity: 1;
+  transform: scale(0.9) translateY(100%);
+}
+
+ul li:hover a img,
+ul li a span {
+  filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
+
+.birdy {
+  width: 30px;
+  height: 25px;
+  padding-bottom: 5px;
+}
+
+.insta {
+  width: 30px;
+  height: 30px;
+}
+
+.facebook {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+.filler2 {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filler2 h1 {
+    font-size: min(3vw, 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location iframe {
+    display: flex;
+    align-items: center;
+    filter: invert(90%);
+    align-self: center;
+    justify-content: center;
+    height: min(35vw);
+    width: min(35vw);
+    padding: 2vw;
+}
+
+.location {
+    display: flex;
+    background-color: var(--bg);
+    position: relative;
+    flex-direction: row;
+    color: #fff;
+    box-shadow: 0px 0px 10px #000000,
+        0px 0px 10px #000000;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.hq {
+    padding: 3vw;
+    gap: 4.5vw;
+    align-items: center;
+    font-size: min(1vw, 20px);
+}
+
+.hq h3, h2 {
+    font-size: min(2vw, 20px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.autoshow {
+  animation: autoShowAnimation .5s both;
+  animation-timeline: view(70% 5%);
+}
+
+
+@keyframes autoShowAnimation {
+  from {
+      opacity: 0;
+      transform: translateY(200px) scale(0.2);
+  }
+   to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+  }
+
+}
+
+
+
+footer {
+  background-color: #fff;
+  gap: 20px;
+}
+
+.backToTop {
+  position: absolute;
+  font-size: min(2vw, 30px);
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+  margin: auto 0;
+  width: 100%;
+  font-weight: lighter;
+  color: white;
+}
+
+.backToTop button {
+  font-size: 2vw;
+  color: #e1e1e1;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  /* background: none; */
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+  padding: 5px;
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.backToTop button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffedd3;
+  transition: 0.5s ease;
+}
+
+.backToTop button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffedd3;
+  transition: 0.5s ease;
+}
+
+.backToTop button:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.backToTop button::before {
+  width: 100%;
+}
+
+.backToTop button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.backToTop button:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: #fff;
+}
+
+.jargin {
+  margin-top: min(1vw, 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.jargin p {
+  /* font-size:  */
+  font-weight: lighter;
+}
+
+.links ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 7%;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  left: 24.5%;
+  margin-bottom: 1%;
+}
+
+.links ul li a {
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.links button:hover {
+  color: #fff;
+}
+
+.links button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.links button:after {
+  content: "";
+  pointer-events: none;
+  bottom: 1px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 1%;
+  background-color: var(--line);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.links hr {
+  height: 20px;
+}
+
+@media (max-width: 500px) {
+  .nav {
+    width: 100%;
+    height: 100vh;
+    background-size: 250% 100%;
+}
+
+.pages {
+  /* border: 2px solid white;
+  border-left: none;
+  border-right: none;
+  border-radius: 20px; */
+  display: flex; /* Use flexbox to manage the layout of links */
+  justify-content: center; /* Space out links evenly */
+  align-items: center; /* Center items vertically */
+  margin-top: 50px;
+  width: 90%;
+  height: 10vh;
+  margin-right: 5%;
+  padding-right: 15%;
+}
+
+  
+.pages a {
+  color: white;
+  text-decoration: none;
+  font-size: 9px;
+  margin: 5px 5px 7px 5px;
+  float: right;
+  transition: transform .1s;
+  background-color: transparent;
+}
+
+.quote3 {font-size: 30px; margin-top: 130%;}
+  
+  .jargin {font-size: 15px;}
+  
+  .jargin p {font-size: 10px; }
+
+  .backToTop {
+    font-size: 2vw;
+    color: #e1e1e1;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    /* background: none; */
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    padding: 0  ;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+    cursor: pointer;
+  }
+  .links ul {
+    gap: 4%;
+    margin-left: 1%;
+    font-size: 10px;
+  }
+}
